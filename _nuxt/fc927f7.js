@@ -607,7 +607,7 @@
                                     return a.text.localeCompare(b.text)
                                 }
                                 )),
-                                c = "https://neal.fun/api/infinite-craft/pair?first=".concat(encodeURIComponent(o[0].text), "&second=").concat(encodeURIComponent(o[1].text)),
+                                c = "https://infiniteback.org/pair?first=".concat(encodeURIComponent(o[0].text), "&second=").concat(encodeURIComponent(o[1].text)),
                                 e.next = 7,
                                 fetch(c, {
                                     signal: r.signal
