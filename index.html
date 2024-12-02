@@ -1,3362 +1,1039 @@
-<!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
-<head>
-    <meta charset="utf-8">
-    <title>Infinite Craft Game - Play Online</title>
-    <link rel="shortcut icon" href="https://infinite-craft.com/favicon.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Play the Infinite Craft game! This is an AI browser game where you can combine elements and get any things from them.">
-    <meta name="keywords" content="infinite, craft, game, ai, word, play, merge, words, combine, elements, items, find">
-    <link href="https://infinite-craft.com/assets/css/main.min.css?v1.65" rel="stylesheet">
-    <link href="https://infinite-craft.com/node_modules/smartbanner.js/dist/smartbanner.min.css?v1.65" rel="stylesheet">
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+    <head>
+        <title>Infinite Craft</title>
+        <meta data-n-head="ssr" charset="utf-8">
+        <meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1">
+        <meta data-n-head="ssr" name="google-site-verification" content="Vyp6Lq2HJODQviN98DbqlmqefoUuDj_cwlmS7jAgaao">
+        <meta data-n-head="ssr" name="title" content="Infinite Craft">
+        <meta data-n-head="ssr" name="description" content="A crafting game where you can make anything. No really it's pretty much endless I think.">
+        <meta data-n-head="ssr" property="og:type" content="website">
+        <meta data-n-head="ssr" property="og:url" content="https://neal.fun/infinite-craft/">
+        <meta data-n-head="ssr" property="og:title" content="Infinite Craft">
+        <meta data-n-head="ssr" property="og:description" content="An endless crafting game">
+        <meta data-n-head="ssr" property="og:image" content="https://neal.fun/share-cards/infinite-craft.png">
+        <meta data-n-head="ssr" property="twitter:card" content="summary_large_image">
+        <meta data-n-head="ssr" property="twitter:url" content="https://neal.fun/infinite-craft/">
+        <meta data-n-head="ssr" property="twitter:image" content="https://neal.fun/share-cards/infinite-craft.png">
+        <meta data-n-head="ssr" property="twitter:title" content="Infinite Craft">
+        <meta data-n-head="ssr" property="twitter:description" content="An endless crafting game">
+        <link data-n-head="ssr" rel="canonical" href="https://neal.fun/infinite-craft/">
+        <link data-n-head="ssr" rel="icon" type="image/png" href="/favicons/infinite-craft.png">
+        <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4556406968269041" async crossorigin="anonymous"></script>
+        <link rel="preload" href="/_nuxt/337f782.js" as="script">
+        <link rel="preload" href="/_nuxt/6bd6cb3.js" as="script">
+        <link rel="preload" href="/_nuxt/7ca8a56.js" as="script">
+        <link rel="preload" href="/_nuxt/57a5676.js" as="script">
+        <link rel="preload" href="/_nuxt/2109e7b.js" as="script">
+        <link rel="preload" href="/_nuxt/3573ce7.js" as="script">
+        <style data-vue-ssr-id="1a73ea6b:0 2ccdeb7a:0 126d9da2:0 adee27a4:0">
+            .nuxt-progress {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                width: 0;
+                opacity: 1;
+                transition: width .1s,opacity .4s;
+                background-color: #000;
+                z-index: 999999
+            }
 
-    <meta property="og:title" content="Infinite Craft Game - Play Online">
-    <meta property="og:description" content="Play the Infinite Craft game! This is an AI browser game where you can combine elements and get any things from them.">
-    <meta property="og:locale" content="en">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://infinite-craft.com">
-    <meta property="og:site_name" content="Infinite Craft Game - Play Online">
-    <meta property="og:width" content="1024">
-    <meta property="og:height" content="1024">
-    <meta property="og:image" content="https://infinite-craft.com/assets/img/infinite-craft.png">
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Infinite Craft Game - Play Online" />
-    <meta name="twitter:description" content="Play the Infinite Craft game! This is an AI browser game where you can combine elements and get any things from them." />
-    <meta name="twitter:image" content="https://infinite-craft.com/assets/img/infinite-craft.png">
+            .nuxt-progress.nuxt-progress-notransition {
+                transition: none
+            }
 
-    <meta name="csrf-token" content="qmjM0iG7vffZOuz5k6w7WJeRiYNNx4AzP4Yu6l5C">
+            .nuxt-progress-failed {
+                background-color: red
+            }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222222">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    
-    <meta name="smartbanner:title" content="Infinite Craft">
-    <meta name="smartbanner:price" content="FREE">
-    <meta name="smartbanner:price-suffix-apple" content=" - On the App Store">
-    <meta name="smartbanner:price-suffix-google" content=" - In Google Play">
-    <meta name="smartbanner:icon-apple" content="https://infinite-craft.com/assets/img/infinite-craft-app.png">
-    <meta name="smartbanner:icon-google" content="https://infinite-craft.com/assets/img/infinite-craft-app.png">
-    <meta name="smartbanner:button" content="VIEW">
-    <meta name="smartbanner:button-url-apple" content="https://apps.apple.com/us/app/infinite-craft-unlimited/id6479947618">
-    <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.smplea.infinitecraft">
-    <meta name="smartbanner:enabled-platforms" content="ios,android">
-    <meta name="smartbanner:close-label" content="Close">
+            @font-face {
+                font-family: Roboto;
+                src: url(/_nuxt/fonts/Roboto-Medium.70ace38.woff2)
+            }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PKT1FXD24C"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-PKT1FXD24C');
-    </script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1851068468056357"     crossorigin="anonymous"></script>
-    
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65f1e7ff1a23d00019c3dab1&product=sop' async='async'></script>
+            @font-face {
+                font-family: Roboto;
+                font-weight: 700;
+                src: url(/_nuxt/fonts/Roboto-Bold.002079d.woff2)
+            }
 
-    
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Product",
-    "brand": "https://infinite-craft.com",
-    "name": "Infinite Craft Game - Play Online",
-    "description": "Play the Infinite Craft game! This is an AI browser game where you can combine elements and get any things from them.",
-    "category": "Productivity",
-    "image": "https://infinite-craft.com/assets/img/infinite-craft.png",
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "worstRating": "1",
-        "bestRating": "5"
-                    ,"ratingValue": "4.9",
-        "ratingCount": "10202"
+            html {
+                font-size: 16px;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                box-sizing: border-box;
+                color: #000;
+                font-family: Roboto,sans-serif;
+                background: #fff
+            }
+
+            *,:after,:before {
+                box-sizing: border-box;
+                margin: 0
+            }
+
+            .simple-page {
+                background: #f1f2f6
+            }
+
+            .pw_report_ad_container {
+                display: none!important
+            }
+
+            @media screen and (max-width: 800px) {
+                .infinite-craft-body {
+                    position:fixed;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden
                 }
-    }
-</script>
-</head>
-<body>
-<div class="page">
-    <div class="page__wrapper">
-        
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "@id": "https://infinite-craft.com/#organization",
-            "name": "Infinite Craft",
-            "url": "https://infinite-craft.com/",
-            "sameAs": []
-        },
-        {
-            "@type": "WebSite",
-            "@id": "https://infinite-craft.com/#website",
-            "url": "https://infinite-craft.com/",
-            "name": "Infinite Craft",
-            "publisher": {
-                "@id": "https://infinite-craft.com/#organization"
             }
-        },
-        {
-            "@type": "WebPage",
-            "@id": "https://infinite-craft.com#webpage",
-            "url": "https://infinite-craft.com",
-            "inLanguage": "en",
-            "name": "Infinite Craft Game",
-            "isPartOf": {
-                "@id": "https://infinite-craft.com#website"
-            },
-            "image": {
-                "@type": "ImageObject",
-                "@id": "https://infinite-craft.com#primaryimage",
-                "url": "https://infinite-craft.com/assets/img/infinite-craft.png",
-                "width": 1024,
-                "height": 1024
-            },
-            "primaryImageOfPage": {
-                "@id": "https://infinite-craft.com#primaryimage"
-            },
-            "datePublished": "2021-04-12T19:42:27-12:00",
-            "description": "Infinite Craft is a fun sandbox game that can be played entirely in a web browser. At the beginning of the game you will receive 4 elements: water, fire, air and earth. By connecting 2 blocks you get a new block that is added to your collection, so you can get millions of different combinations."
-        }
-    ]
-}
-</script>
 
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "HowTo",
-    "name": "How to play Infinite Craft?",
-    "url": "https://infinite-craft.com",
-    "inLanguage": "https://infinite-craft.com",
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://infinite-craft.com/assets/img/infinite-craft.png"
-    },
-    "step": [
-        {
-            "@type": "HowToStep",
-            "position": 1,
-            "name": "Combine the first elements",
-            "text": "At the start of the game you will see 4 items: Water, Fire, Wind and Earth. Combine these elements to create a new one and it will automatically be added to your collection of elements in the right sidebar.",
-            "image": "https://infinite-craft.com/assets/img/infinite-craft-how-to-1.png"
-        },
-        {
-            "@type": "HowToStep",
-            "position": 2,
-            "name": "Keep combining blocks",
-            "text": "The more combinations you make, the more items are added to your collection, so you can create more unique blocks. If you want to delete any block, or clear the entire field, use the buttons in the lower right corner of the screen.",
-            "image": "https://infinite-craft.com/assets/img/infinite-craft-how-to-2.png"
-        },
-        {
-            "@type": "HowToStep",
-            "position": 3,
-            "name": "Get the target element",
-            "text": "Infinite Craft doesn&#039;t have an end goal, but you can make an incredible number of combinations, for example it can help you with cooking recipes, get new heroes in games and much more. This game is truly endless and will allow you to merge anything.",
-            "image": "https://infinite-craft.com/assets/img/infinite-craft-how-to-3.png"
-        }
-    ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What is Infinite Craft?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Infinite Craft is a browser-based sandbox game in which players can create a wide range of things and creatures by combining different elements. The game uses artificial intelligence software to create new items according to prompts sent to it."
+            .container[data-v-3b450d8d] {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                font-family: Roboto,sans-serif;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                --text-color: #040404;
+                --background-color: #fff;
+                --border-color: #c8c8c8;
+                --item-bg: #fff;
+                --instance-bg: linear-gradient(0deg,#f7feff,#fff 70%);
+                --instance-bg-hover: linear-gradient(0deg,#d6fcff,#fff 90%);
+                --instance-border: #91a8c1;
+                --instance-border-hover: #91a8c1;
+                --sidebar-bg: hsla(0,0%,100%,0.93);
+                --discoveries-bg-active: #fff9ea;
+                background: var(--background-color);
+                color: var(--text-color)
             }
-        },
-        {
-            "@type": "Question",
-            "name": "How to combine elements?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Combining items in Infinite Craft is easy, whether you're playing on PC or mobile. On mobile, you just need to tap on an object and then tap on a second object to merge them. On a PC, you are given a workspace where you can click and drag items into it. Place an element on top of each other to combine them."
+
+            .container.dark-mode[data-v-3b450d8d] {
+                --border-color: #d1d1d1;
+                --item-bg: #000;
+                --instance-bg: linear-gradient(180deg,#22252b,#000 80%);
+                --instance-bg-hover: linear-gradient(180deg,#3d4249,#000 80%);
+                --instance-border: #dcdcdc;
+                --instance-border-hover: #c7e0ff;
+                --sidebar-bg: #000;
+                --background-color: #000;
+                --discoveries-bg-active: #423a24;
+                --text-color: #fff
             }
-        },
-        {
-            "@type": "Question",
-            "name": "How to remove items?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Objects can be removed from the workspace on a PC by dragging the object outside the workspace or right-clicking on it. Pressing the broom button in the bottom right corner will clear the entire screen. On mobile devices, you cannot delete individual items, but you can only completely reset all items using the button in the lower left corner of the screen."
+
+            .sidebar[data-v-3b450d8d] {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 305px;
+                height: 100vh;
+                z-index: 10;
+                overflow-y: scroll;
+                overflow-x: visible;
+                background: var(--sidebar-bg);
+                border-left: 1px solid var(--border-color);
+                contain: strict
             }
-        },
-        {
-            "@type": "Question",
-            "name": "How to start over in Infinite Craft?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Starting over in Infinite Craft is easy by selecting the Reset option on PC and mobile. Please be aware that this will delete all your discoveries, including your first discoveries. Remember that there is no way to go back after a reset."
+
+            .logo[data-v-3b450d8d] {
+                position: fixed;
+                top: 10px;
+                right: 320px;
+                width: 80px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                pointer-events: none
             }
-        }
-    ]
-}
-</script>
 
-    <section class="section section--main">
+            .dark-mode .logo[data-v-3b450d8d] {
+                filter: invert(1)
+            }
 
-            <iframe id="iframehtml5" class="iframe-default" name="GAME FRAME" style="background-color:#fff" width="100%"
-        height="100%" src="/infinite-craft/" title="Infinite Craft" frameborder="0" border="0" scrolling="auto"
-        allowfullscreen="">
-</iframe>
-</body>            
-    </section>
-            
-    <div class="container" style="padding:15px 0 0">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1851068468056357"
-     crossorigin="anonymous"></script>
-<!-- infinite-craft.com - adapt hor -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1851068468056357"
-     data-ad-slot="8140952465"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    </div>
-</div>
+            .items[data-v-3b450d8d] {
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 9px;
+                min-height: calc(100svh - 71px);
+                line-height: .5em
+            }
 
-    <section class="section" style="padding:15px 0">
-        <div class="container">
-            <div class="infinite-craft-text" style="text-align:center">
-                <p class="info_text_p" style="margin-bottom:5px;font-weight:bold;">Download Infinite Craft</p>
-                <a class="app-button" href="https://apps.apple.com/us/app/infinite-craft-unlimited/id6479947618" target="_blank"><img style="height:56px;margin:0 5px" src="/assets/img/apple.svg"></a>
+            .item[data-v-3b450d8d] {
+                margin: 4px;
+                cursor: pointer;
+                padding: 8px 8px 7px;
+                border-radius: 5px;
+                display: inline-block;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                border: 1px solid var(--border-color);
+                transition: background .15s linear;
+                background: var(--item-bg);
+                line-height: 1em;
+                contain: layout style paint
+            }
+
+            .item-emoji[data-v-3b450d8d],.item[data-v-3b450d8d] {
+                font-size: 15.4px
+            }
+
+            .items:not(.is-delete-mode) .item-hidden[data-v-3b450d8d] {
+                display: none
+            }
+
+            .is-delete-mode .item-hidden[data-v-3b450d8d] {
+                opacity: .35
+            }
+
+            .is-delete-mode .item[data-v-3b450d8d] {
+                contain: layout style;
+                position: relative
+            }
+
+            .item-remove[data-v-3b450d8d] {
+                position: absolute;
+                right: -6px;
+                top: -6px;
+                width: 17px;
+                height: 17px;
+                background-color: #22252b;
+                border-radius: 100%;
+                background-image: url(/infinite-craft/close-white.svg);
+                background-size: 13px 13px;
+                background-position: 2px 2px;
+                background-repeat: no-repeat;
+                font-size: 12px;
+                cursor: pointer
+            }
+
+            .item-remove[data-v-3b450d8d]:hover {
+                transform: scale(1.07)
+            }
+
+            .dark-mode .item-remove[data-v-3b450d8d] {
+                background-color: #fff;
+                background-image: url(/infinite-craft/close.svg)
+            }
+
+            @keyframes itemRemoveScale-3b450d8d {
+                0% {
+                    scale: 0
+                }
+
+                to {
+                    scale: 1
+                }
+            }
+
+            .is-delete-mode .item[data-v-3b450d8d]:hover {
+                background: 0 0;
+                border: 1px solid #c8c8c8;
+                cursor: auto
+            }
+
+            .instance[data-v-3b450d8d] {
+                position: fixed;
+                font-size: 18px;
+                z-index: 11;
+                left: 0;
+                top: 0;
+                padding: 11px 10px 10px;
+                transition: scale .15s ease-in;
+                border-radius: 5px;
+                transform-origin: center center;
+                display: flex;
+                align-items: center;
+                contain: layout;
+                border: 1px solid var(--instance-border);
+                background: var(--instance-bg)
+            }
+
+            .instance-discovered-text[data-v-3b450d8d],.instance[data-v-3b450d8d] {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none
+            }
+
+            .instance-discovered-text[data-v-3b450d8d] {
+                position: absolute;
+                bottom: -3px;
+                transform: translate(-50%,100%);
+                left: 50%;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                width: 110px
+            }
+
+            .instance-discovered-emoji[data-v-3b450d8d] {
+                width: 12px;
+                position: relative;
+                top: 1px;
+                margin-right: 3px
+            }
+
+            .dark-mode .instance-discovered-emoji[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .pinwheel[data-v-3b450d8d] {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 130px;
+                height: 130px;
+                pointer-events: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                z-index: 1;
+                animation: pinwheelSpin-3b450d8d 2s linear infinite;
+                transition: scale .4s ease-in-out,opacity .4s ease-in-out;
+                scale: 0;
+                opacity: 0;
+                transform-origin: center center
+            }
+
+            .pinwheel-animation-enter-active[data-v-3b450d8d],.pinwheel-animation-leave-active[data-v-3b450d8d] {
+                scale: 1;
+                opacity: 1
+            }
+
+            .pinwheel-animation-enter-from[data-v-3b450d8d],.pinwheel-animation-leave-to[data-v-3b450d8d] {
+                scale: 0;
+                opacity: 0
+            }
+
+            @keyframes pinwheelSpin-3b450d8d {
+                to {
+                    rotate: 90deg
+                }
+            }
+
+            @keyframes scaleIn-3b450d8d {
+                0% {
+                    scale: .5
+                }
+
+                to {
+                    scale: 1
+                }
+            }
+
+            @media (hover: hover) {
+                .item[data-v-3b450d8d]:hover {
+                    background:var(--instance-bg-hover);
+                    border: 1px solid var(--instance-border-hover)
+                }
+            }
+
+            .instance-selected[data-v-3b450d8d] {
+                background: var(--instance-bg-hover);
+                border: 1px solid var(--instance-border-hover)
+            }
+
+            .item-selected[data-v-3b450d8d] {
+                background: #e3e3e3
+            }
+
+            .instruction[data-v-3b450d8d] {
+                font-size: 14px;
+                text-align: center;
+                margin-top: 25px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                pointer-events: none;
+                border-radius: 5px;
+                padding: 9px 0;
+                border: 1px solid var(--border-color);
+                width: calc(100% - 10px);
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.2em
+            }
+
+            .instruction-icon[data-v-3b450d8d] {
+                width: 16px;
+                position: relative;
+                top: 3px;
+                margin-right: 5px;
+                margin-top: -3px
+            }
+
+            .dark-mode .instruction-icon[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .empty-sidebar[data-v-3b450d8d] {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 15px;
+                text-align: center;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                pointer-events: none;
+                top: 25px
+            }
+
+            .instance-disabled[data-v-3b450d8d] {
+                pointer-events: none;
+                opacity: .7;
+                transition: .15s linear;
+                animation: pulse-3b450d8d .8s ease-in-out .15s infinite alternate-reverse
+            }
+
+            @keyframes pulse-3b450d8d {
+                0% {
+                    opacity: .2
+                }
+
+                to {
+                    opacity: .7
+                }
+            }
+
+            .instance-disabled[data-v-3b450d8d]:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none
+            }
+
+            .instance-hover[data-v-3b450d8d] {
+                scale: 1.04;
+                background: var(--instance-bg-hover);
+                border: 1px solid var(--instance-border-hover)
+            }
+
+            .site-title[data-v-3b450d8d] {
+                position: fixed;
+                top: 13px;
+                left: 13px;
+                width: 110px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none
+            }
+
+            .site-title[data-v-3b450d8d]:hover {
+                transform: scale(1.03)
+            }
+
+            .dark-mode .site-title[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .side-controls[data-v-3b450d8d] {
+                position: fixed;
+                right: 314px;
+                bottom: 7px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                display: flex;
+                grid-gap: 19px
+            }
+
+            .dark-mode .side-controls[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .clear[data-v-3b450d8d],.sound[data-v-3b450d8d] {
+                width: 21px;
+                cursor: pointer;
+                opacity: .8;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none
+            }
+
+            .sound[data-v-3b450d8d] {
+                transform: scale(.92)
+            }
+
+            .dark-mode-icon[data-v-3b450d8d] {
+                width: 21px;
+                cursor: pointer
+            }
+
+            .coffee[data-v-3b450d8d] {
+                width: 15px
+            }
+
+            .coffee-link[data-v-3b450d8d] {
+                line-height: 0
+            }
+
+            .clear[data-v-3b450d8d]:hover,.coffee[data-v-3b450d8d]:hover,.dark-mode-icon[data-v-3b450d8d]:hover,.sound[data-v-3b450d8d]:hover,.trash[data-v-3b450d8d]:hover {
+                transform: scale(1.05)
+            }
+
+            .sidebar-controls[data-v-3b450d8d] {
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                font-size: 13px;
+                text-align: right;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                background: var(--sidebar-bg)
+            }
+
+            .sidebar-controls[data-v-3b450d8d]:after {
+                content: "";
+                position: absolute;
+                top: -30px;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                background: linear-gradient(180deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.9));
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity .15s linear
+            }
+
+            .dark-mode .sidebar-controls[data-v-3b450d8d]:after {
+                background: linear-gradient(180deg,transparent,rgba(0,0,0,.9))
+            }
+
+            .sidebar-controls-fade-show[data-v-3b450d8d]:after {
+                opacity: 1
+            }
+
+            .sidebar-search[data-v-3b450d8d] {
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                position: relative;
+                background: var(--background-color)
+            }
+
+            .sidebar-sorting[data-v-3b450d8d] {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                text-align: center;
+                border-top: 1px solid var(--border-color);
+                cursor: pointer;
+                grid-gap: 1px;
+                background: var(--border-color)
+            }
+
+            .sidebar-sorting-item[data-v-3b450d8d] {
+                padding: 7px 0;
+                background: var(--background-color)
+            }
+
+            .sidebar-discoveries-active[data-v-3b450d8d] {
+                background: var(--discoveries-bg-active)
+            }
+
+            .sidebar-input[data-v-3b450d8d] {
+                width: 100%;
+                font-size: 15px;
+                border: 1px solid var(--border-color);
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                outline: 0;
+                padding: 0 20px 0 40px;
+                height: 40px;
+                line-height: 18px;
+                position: relative;
+                background: url(/infinite-craft/search.svg) no-repeat 22px 22px;
+                background-size: 21px 21px;
+                background-position: 10px 10px;
+                color: var(--text-color)
+            }
+
+            .sidebar-input[data-v-3b450d8d]::-moz-placeholder {
+                opacity: .5
+            }
+
+            .sidebar-input[data-v-3b450d8d]::placeholder {
+                opacity: .5
+            }
+
+            .dark-mode .sidebar-input[data-v-3b450d8d]::-moz-placeholder {
+                opacity: .75
+            }
+
+            .dark-mode .sidebar-input[data-v-3b450d8d]::placeholder {
+                opacity: .75
+            }
+
+            .sidebar-input[data-v-3b450d8d]:after {
+                content: "";
+                left: 10px;
+                top: 50%;
+                font-size: 20px;
+                pointer-events: none
+            }
+
+            .sidebar-input-close[data-v-3b450d8d],.sidebar-input[data-v-3b450d8d]:after {
+                position: absolute;
+                transform: translateY(-50%);
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none
+            }
+
+            .sidebar-input-close[data-v-3b450d8d] {
+                right: 10px;
+                top: calc(50% + 1px);
+                cursor: pointer;
+                opacity: .45;
+                width: 15px
+            }
+
+            .dark-mode .sidebar-input-close[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .sort[data-v-3b450d8d] {
+                cursor: pointer;
+                padding: 2px;
+                opacity: .9;
+                font-size: 14px
+            }
+
+            .sort-img[data-v-3b450d8d] {
+                height: 15px;
+                top: 2px;
+                padding: 2px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                position: relative
+            }
+
+            .instance-emoji[data-v-3b450d8d] {
+                font-size: 21px;
+                margin-right: 5px
+            }
+
+            .instance-hide[data-v-3b450d8d] {
+                display: none!important;
+                pointer-events: none!important
+            }
+
+            .list-enter[data-v-3b450d8d],.list-leave-to[data-v-3b450d8d] {
+                transform: scale(0)
+            }
+
+            .particles[data-v-3b450d8d] {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none
+            }
+
+            .instance-anim-enter-active[data-v-3b450d8d] {
+                animation: scaleIn-3b450d8d .13s ease-in 1 forwards
+            }
+
+            .instance-anim-leave-to[data-v-3b450d8d] {
+                opacity: 0;
+                scale: 0
+            }
+
+            .instance-anim-leave-active[data-v-3b450d8d] {
+                transition: opacity .16s linear,scale .16s linear
+            }
+
+            .reset[data-v-3b450d8d] {
+                position: fixed;
+                left: 10px;
+                bottom: 10px;
+                cursor: pointer;
+                opacity: .7;
+                font-size: 15px
+            }
+
+            .sidebar-sorting-icon[data-v-3b450d8d] {
+                height: 13px;
+                line-height: 0;
+                position: relative;
+                top: 2px;
+                margin-right: 1px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                pointer-events: none
+            }
+
+            .dark-mode .sidebar-sorting-icon[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .empty-sidebar-icon[data-v-3b450d8d] {
+                width: 22px;
+                position: relative;
+                top: 5px;
+                margin-right: 5px;
+                margin-top: -5px
+            }
+
+            .trash[data-v-3b450d8d] {
+                width: 19px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none
+            }
+
+            .trash-active[data-v-3b450d8d] {
+                animation: sway-3b450d8d .3s linear infinite alternate-reverse
+            }
+
+            .dark-mode .empty-sidebar-icon[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .dark-mode-mobile[data-v-3b450d8d],.sound-mobile[data-v-3b450d8d] {
+                width: 20px
+            }
+
+            .dark-mode .side-controls-mobile[data-v-3b450d8d] {
+                filter: invert(1)
+            }
+
+            .side-controls-mobile[data-v-3b450d8d] {
+                position: fixed;
+                bottom: 190px;
+                right: 10px;
+                display: none;
+                grid-gap: 14px
+            }
+
+            .app-store[data-v-3b450d8d] {
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                background: #dbf6ff;
+                padding: 6px;
+                border-radius: 5px;
+                border: 1px solid #0073ff;
+                max-width: 300px;
+                font-size: 14.5px;
+                color: #000;
+                text-decoration: none;
+                align-items: center;
+                display: none
+            }
+
+            .app-store-icon[data-v-3b450d8d] {
+                width: 25px;
+                height: 25px;
+                border-radius: 5px;
+                margin-right: 8px
+            }
+
+            @keyframes sway-3b450d8d {
+                0% {
+                    rotate: -6deg
+                }
+
+                to {
+                    rotate: 6deg
+                }
+            }
+
+            @media screen and (min-width: 1150px) {
+                .sidebar[data-v-3b450d8d] {
+                    width:350px
+                }
+
+                .logo[data-v-3b450d8d] {
+                    right: 362px;
+                    width: 85px
+                }
+
+                .item[data-v-3b450d8d] {
+                    font-size: 16.4px;
+                    padding: 9px 10px 8px
+                }
+
+                .items[data-v-3b450d8d] {
+                    min-height: calc(100svh - 76px)
+                }
+
+                .item-emoji[data-v-3b450d8d] {
+                    font-size: 16.4px
+                }
+
+                .instance[data-v-3b450d8d] {
+                    font-size: 19.5px;
+                    padding: 11px 11px 10px
+                }
+
+                .instruction[data-v-3b450d8d] {
+                    font-size: 15px
+                }
+
+                .pinwheel[data-v-3b450d8d] {
+                    width: 145px;
+                    height: 145px
+                }
+
+                .instance-discovered-text[data-v-3b450d8d] {
+                    font-size: 13px
+                }
+
+                .side-controls[data-v-3b450d8d] {
+                    right: 361px
+                }
+
+                .clear[data-v-3b450d8d],.sound[data-v-3b450d8d] {
+                    width: 23px
+                }
+
+                .dark-mode-icon[data-v-3b450d8d] {
+                    width: 22px
+                }
+
+                .coffee[data-v-3b450d8d] {
+                    width: 16px
+                }
+
+                .trash[data-v-3b450d8d] {
+                    width: 20px
+                }
+
+                .sidebar-input[data-v-3b450d8d] {
+                    background-size: 23px 23px;
+                    background-position: 11px 12px;
+                    height: 45px;
+                    font-size: 16px;
+                    line-height: 21px;
+                    padding-left: 43px;
+                    padding-top: 2px
+                }
+
+                .sidebar-input-close[data-v-3b450d8d] {
+                    width: 18px;
+                    right: 12px
+                }
+
+                .empty-sidebar[data-v-3b450d8d] {
+                    font-size: 16px
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                .sidebar[data-v-3b450d8d] {
+                    width:100%;
+                    height: 183px;
+                    bottom: 0;
+                    top: auto;
+                    border-top: 1px solid #9f9f9f;
+                    overflow-y: hidden;
+                    overflow-x: scroll;
+                    border-left: none
+                }
+
+                .sidebar[data-v-3b450d8d]::-webkit-scrollbar {
+                    display: none
+                }
+
+                .sidebar-controls[data-v-3b450d8d] {
+                    display: none
+                }
+
+                .items[data-v-3b450d8d] {
+                    min-height: auto;
+                    padding: 5px 5px 7px;
+                    height: 183px
+                }
+
+                .items-inner[data-v-3b450d8d] {
+                    height: 100px;
+                    width: auto
+                }
+
+                .item[data-v-3b450d8d] {
+                    width: auto;
+                    min-height: 32px;
+                    grid-gap: 5px;
+                    line-height: 32px;
+                    font-size: 15px;
+                    padding: 1px 9px 0;
+                    border: 1px solid #9f9f9f;
+                    color: var(--text-color);
+                    transition: background .1s linear;
+                    touch-action: manipulation
+                }
+
+                .item[data-v-3b450d8d],.items-row[data-v-3b450d8d] {
+                    white-space: nowrap
+                }
+
+                .instance[data-v-3b450d8d] {
+                    min-height: 34px;
+                    line-height: 34px;
+                    font-size: 16px
+                }
+
+                .item-emoji-mobile[data-v-3b450d8d] {
+                    margin-right: -1px
+                }
+
+                .particles[data-v-3b450d8d] {
+                    z-index: 1
+                }
+
+                .side-controls[data-v-3b450d8d] {
+                    display: none
+                }
+
+                .logo[data-v-3b450d8d] {
+                    position: absolute;
+                    right: 10px;
+                    left: auto;
+                    top: 10px
+                }
+
+                .instance-discovered-text[data-v-3b450d8d] {
+                    bottom: 3px
+                }
+
+                .reset[data-v-3b450d8d] {
+                    bottom: 190px
+                }
+
+                .instruction[data-v-3b450d8d] {
+                    display: none
+                }
+
+                .app-store[data-v-3b450d8d],.side-controls-mobile[data-v-3b450d8d] {
+                    display: flex
+                }
+            }
+        </style>
+        <link rel="preload" href="/_nuxt/static/1726786135/infinite-craft/state.js" as="script">
+        <link rel="preload" href="/_nuxt/static/1726786135/infinite-craft/payload.js" as="script">
+        <link rel="preload" href="/_nuxt/static/1726786135/manifest.js" as="script">
+    </head>
+    <body class="infinite-craft-body" data-n-head="%7B%22class%22:%7B%22ssr%22:%22infinite-craft-body%22%7D%7D">
+        <div data-server-rendered="true" id="__nuxt">
+            <div id="__layout">
+                <div>
+                    <div class="container" data-v-3b450d8d>
+                        <a href="/" class="nuxt-link-active" data-v-3b450d8d>
+                            <img src="/general/logo.svg" class="site-title" data-v-3b450d8d>
+                        </a>
+                        <div class="side-controls" data-v-3b450d8d>
+                            <img src="/infinite-craft/trash.svg" class="trash" data-v-3b450d8d>
+                            <img src="/infinite-craft/dark-mode.svg" class="dark-mode-icon" data-v-3b450d8d>
+                            <img src="/infinite-craft/clear.svg" class="clear" data-v-3b450d8d>
+                            <img src="/infinite-craft/sound.svg" class="sound" data-v-3b450d8d>
+                        </div>
+                        <div class="side-controls-mobile" data-v-3b450d8d>
+                            <img src="/infinite-craft/dark-mode.svg" class="dark-mode-mobile" data-v-3b450d8d>
+                            <img src="/infinite-craft/sound.svg" class="sound-mobile" data-v-3b450d8d>
+                        </div>
+                        <canvas class="particles" data-v-3b450d8d></canvas>
+                        <div class="sidebar" data-v-3b450d8d>
+                            <div class="sidebar-inner" data-v-3b450d8d>
+                                <div class="items" data-v-3b450d8d></div>
+                            </div>
+                            <div class="sidebar-controls sidebar-controls-fade-show" data-v-3b450d8d>
+                                <div class="sidebar-sorting" data-v-3b450d8d>
+                                    <div class="sidebar-discoveries sidebar-sorting-item" data-v-3b450d8d>
+                                        <img src="/infinite-craft/magic.svg" class="sidebar-sorting-icon" data-v-3b450d8d>Discoveries
+
+                                    </div>
+                                    <div class="sidebar-sort sidebar-sorting-item" data-v-3b450d8d>
+                                        <img src="/infinite-craft/time.svg" class="sidebar-sorting-icon" data-v-3b450d8d>Sort by time
+
+                                    </div>
+                                </div>
+                                <div class="sidebar-search" data-v-3b450d8d>
+                                    <input placeholder="Search (4) items..." class="sidebar-input" data-v-3b450d8d>
+                                    <img src="/infinite-craft/close.svg" class="sidebar-input-close" style="display:none" data-v-3b450d8d>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="instances" data-v-3b450d8d>
+                            <div data-v-3b450d8d>
+                                <div id="instance-0" class="item instance instance-hide" data-v-3b450d8d>
+                                    <span class="instance-emoji" data-v-3b450d8d>💧</span>
+                                    Water
+
+                                </div>
+                            </div>
+                        </div>
+                        <img src="/infinite-craft/logo.svg" class="logo" data-v-3b450d8d>
+                        <div class="reset" data-v-3b450d8d>Reset</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="section section--top">
-        <div class="container">
-            <div class="headline">
-                <h1 class="headline__title">Infinite Craft Game</h1>
-                <h2 class="headline__text">Infinite Craft is a fun sandbox game that can be played entirely in a web browser. At the beginning of the game you will receive 4 elements: water, fire, air and earth. By connecting 2 blocks you get a new block that is added to your collection, so you can get millions of different combinations.</h2>
-                <a class="recipes__btn" href="/recipes">🥣 Explore Recipes</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="infinite-craft-text">
-            <h2 class="h2--center">How to play Infinite Craft?</h2>
-            <ol class="ol">
-                <li>
-                    <h3>Combine the first elements</h3><span>At the start of the game you will see 4 items: Water, Fire, Wind and Earth. Combine these elements to create a new one and it will automatically be added to your collection of elements in the right sidebar.</span>
-                    <img src="https://infinite-craft.com/assets/img/infinite-craft-how-to-1.png" alt="Combine the first elements" title="Combine the first elements">
-                </li>
-                <li>
-                    <h3>Keep combining blocks</h3><span>The more combinations you make, the more items are added to your collection, so you can create more unique blocks. If you want to delete any block, or clear the entire field, use the buttons in the lower right corner of the screen.</span>
-                    <img src="https://infinite-craft.com/assets/img/infinite-craft-how-to-2.png" alt="Keep combining blocks" title="Keep combining blocks">
-                </li>
-                <li>
-                    <h3>Get the target element</h3><span>Infinite Craft doesn&#039;t have an end goal, but you can make an incredible number of combinations, for example it can help you with cooking recipes, get new heroes in games and much more. This game is truly endless and will allow you to merge anything.</span>
-                    <img src="https://infinite-craft.com/assets/img/infinite-craft-how-to-3.png" alt="Get the target element" title="Get the target element">
-                </li>
-            </ol>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--grey">
-        <div class="container">
-            <div class="faq">
-                <h2>Frequently Asked Questions</h2>
-                <ol>
-                    <li>
-                        <h3>What is Infinite Craft?</h3>
-                        <p>Infinite Craft is a browser-based sandbox game in which players can create a wide range of things and creatures by combining different elements. The game uses artificial intelligence software to create new items according to prompts sent to it.</p>
-                    </li>
-                    <li>
-                        <h3>How to combine elements?</h3>
-                        <p>Combining items in Infinite Craft is easy, whether you're playing on PC or mobile. On mobile, you just need to tap on an object and then tap on a second object to merge them. On a PC, you are given a workspace where you can click and drag items into it. Place an element on top of each other to combine them.</p>
-                    </li>
-                    <li>
-                        <h3>How to remove items?</h3>
-                        <p>Objects can be removed from the workspace on a PC by dragging the object outside the workspace or right-clicking on it. Pressing the broom button in the bottom right corner will clear the entire screen. On mobile devices, you cannot delete individual items, but you can only completely reset all items using the button in the lower left corner of the screen.</p>
-                    </li>
-                    <li>
-                        <h3>How to start over in Infinite Craft?</h3>
-                        <p>Starting over in Infinite Craft is easy by selecting the Reset option on PC and mobile. Please be aware that this will delete all your discoveries, including your first discoveries. Remember that there is no way to go back after a reset.</p>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-            <div class="infinite-craft-text">
-               <h2 class="h2--center">Infinite Craft Recipes</h2>
-
-<table class="infinite-craft-table">
-<caption>
-<thead></thead><tbody><tr>
-<td>
-</td>
-<td><b>🔥Fire</b>
-</td>
-<td><b>💧Water</b>
-</td>
-<td><b>🌍Earth</b>
-</td>
-<td><b>🌬️Wind</b>
-</td>
-<td><b>🌋Volcano</b>
-</td>
-<td><b>💨Steam</b>
-</td>
-<td><b>🌋Lava</b>
-</td>
-<td><b>💨Smoke</b>
-</td>
-<td><b>🚗Engine</b>
-</td></tr>
-<tr>
-<td><b>🔥Fire</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚗Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>💧Water</b>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌊Lake</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌊Wave</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🌍Earth</b>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🏔️Mountain</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚜Tractor</small>
-</td></tr>
-<tr>
-<td><b>🌬️Wind</b>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🌊Wave</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌬️Windmill</small>
-</td></tr>
-<tr>
-<td><b>🌋Volcano</b>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🏔️Mountain</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>💨Steam</b>
-</td>
-<td><small>🚗Engine</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🌋Lava</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td></tr>
-<tr>
-<td><b>💨Smoke</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🚗Engine</b>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🚜Tractor</small>
-</td>
-<td><small>🌬️Windmill</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🚂Train</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🌊Lake</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🚤Boat</small>
-</td></tr>
-<tr>
-<td><b>🌱Plant</b>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🌳Tree</small>
-</td>
-<td><small>🌼Dandelion</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🕯️Incense</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🌊Wave</b>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🏄Surf</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🏄Surf</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td></tr>
-<tr>
-<td><b>☁️Cloud</b>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>✈️Jet</small>
-</td></tr>
-<tr>
-<td><b>🪨Stone</b>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🪨Rock</small>
-</td>
-<td><small>🪨Rock</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Geysir</small>
-</td>
-<td><small>🔪Obsidian</small>
-</td>
-<td><small>🗽Statue</small>
-</td>
-<td><small>🚂Steamroller</small>
-</td></tr>
-<tr>
-<td><b>⚡️Lightning</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>⚡️Electricity</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🌋Earthquake</small>
-</td>
-<td><small>⚡️Electricity</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>⛈️Thunder</small>
-</td>
-<td><small>🚗Tesla</small>
-</td></tr>
-<tr>
-<td><b>☀️Sun</b>
-</td>
-<td><small>☀️Solar</small>
-</td>
-<td><small>🌈Rainbow</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌻Sunflower</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌈Rainbow</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌑Eclipse</small>
-</td>
-<td><small>☀️Solar</small>
-</td></tr>
-<tr>
-<td><b>☀️Solar</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🪐Planet</small>
-</td>
-<td><small>🌬️Windmill</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>🌑Eclipse</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td></tr>
-<tr>
-<td><b>🌫️Fog</b>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>❄️Ice</small>
-</td>
-<td><small>🌫️Mist</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🌊Ocean</b>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🐊Swamp</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🌿Marsh</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🌫️Mist</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🐉Dragon</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐍Sea  Serpent</small>
-</td>
-<td><small>🏔️Mountain</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🌊Tsunami</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>🌀Hurricane</small>
-</td>
-<td><small>🌋Earthquake</small>
-</td>
-<td><small>🚢Titanic</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td></tr>
-<tr>
-<td><b>🌧️Rain</b>
-</td>
-<td><small>🌈Rainbow</small>
-</td>
-<td><small>🌈Rainbow</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🌈Rainbow</b>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🦄Unicorn</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td></tr>
-<tr>
-<td><b>🪨Rock</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🏔️Mountain</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Geothermal</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪨Stone</small>
-</td></tr>
-<tr>
-<td><b>⚡️Electricity</b>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>🚂Train</small>
-</td>
-<td><small>🌋Magma</small>
-</td>
-<td><small>⚡️Lightning</small>
-</td>
-<td><small>🚗 Car</small>
-</td></tr>
-<tr>
-<td><b>❄️Ice</b>
-</td>
-<td><small>💧Water</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>❄️Snow</small>
-</td>
-<td><small>❄️Snow</small>
-</td>
-<td><small>🍦Ice  Cream</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🧊Refrigerator</small>
-</td></tr>
-<tr>
-<td><b>🐟Fish</b>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🐠Fishbowl</small>
-</td>
-<td><small>🐳Whale</small>
-</td>
-<td><small>🐟Flying Fish</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🐢Salamander</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🍣Sushi</b>
-</td>
-<td><small>🌶️Wasabi</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🍚Rice</small>
-</td>
-<td><small>🐟Flying  Fish</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍣Sashimi</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🌶️Wasabi</b>
-</td>
-<td><small>🔥Fire Breath</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🤧Sneeze</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🔥Fire Breath</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire  Storm</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌫️Steam  Breath</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🐉Dragon</small>
-</td></tr>
-<tr>
-<td><b>🌿Marsh</b>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🌫️Mist</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Mist</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🐍Sea Serpent</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐋Leviathan</small>
-</td>
-<td><small>🐋Leviathan</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐙Krakken</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🌊Iceberg</b>
-</td>
-<td><small>💧Water</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>❄️Ice</small>
-</td>
-<td><small>❄️Snow</small>
-</td>
-<td><small>🍦Ice Cream</small>
-</td>
-<td><small>❄️Ice</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🚢Titanic</small>
-</td></tr>
-<tr>
-<td><b>🐠Fishbowl</b>
-</td>
-<td><small>🐠Goldfish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐠Aquarium</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🐠Aquarium</small>
-</td></tr>
-<tr>
-<td><b>🐠Goldfish</b>
-</td>
-<td><small>🐟Boiled Fish</small>
-</td>
-<td><small>🐠Fishbowl</small>
-</td>
-<td><small>🐸Pond</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>💛Gold</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🐟Boiled Fish</b>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🐋Leviathan</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐳Whale</small>
-</td>
-<td><small>🌎Titan</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Krakatoa</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🍲Soup</b>
-</td>
-<td><small>🌶️Chili</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🚢Titanic</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍲Stew</small>
-</td>
-<td><small>🍲Stone Soup</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🚗Souped-up</small>
-</td></tr>
-<tr>
-<td><b>🌶️Chili</b>
-</td>
-<td><small>🔥Hot</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌶️Pepper</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🔥Hot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🔥Hot</b>
-</td>
-<td><small>🔥Heat</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🎈Hot  Air</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🔥Heat</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🎈Hot Air</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>⚡️Energy</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🐳Whale</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>⛵️Sail</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>🚤Submarine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vape</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🍵Tea</b>
-</td>
-<td><small>🍵Chai</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td>
-<td><small>🍵Teapot</small>
-</td></tr>
-<tr>
-<td><b>🍵Chai</b>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🏔️Mountain</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Lake</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌨Avalanche</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🌫️Dust</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🪐Planet</small>
-</td>
-<td><small>🌪️Sandstorm</small>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🧹Vacuum</small>
-</td></tr>
-<tr>
-<td><b>💩Mud</b>
-</td>
-<td><small>🧱Brick</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🏺Clay</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🏺Clay</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🚜Tractor</small>
-</td></tr>
-<tr>
-<td><b>🌋Ash</b>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>💦Puddle</small>
-</td>
-<td><small>🌱Soil</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🧱Brick</b>
-</td>
-<td><small>🧱Kiln</small>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🏠House</small>
-</td>
-<td><small>🏠House</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏠Chimney</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🔥Phoenix</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🐦Firebird</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🐦Firebird</small>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>✈️Jet</small>
-</td></tr>
-<tr>
-<td><b>🧱Kiln</b>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚗Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🚂Steam  Engine</small>
-</td></tr>
-<tr>
-<td><b>🏺Pottery</b>
-</td>
-<td><small>🏺Ceramic</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🏺Vase</small>
-</td></tr>
-<tr>
-<td><b>🏺Ceramic</b>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🥘Pot</small>
-</td>
-<td><small>🥘Pot</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Clay</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏺Vase</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>💦Puddle</b>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🐸Pond</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>💦Puddle</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🪞Mirror</small>
-</td>
-<td><small>💦Puddle</small>
-</td></tr>
-<tr>
-<td><b>🥃Glass</b>
-</td>
-<td><small>🔍Lens</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍾Bottle</small>
-</td>
-<td><small>🪟Window</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🪞Mirror</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪞Mirror</small>
-</td>
-<td><small>💨Windshield</small>
-</td></tr>
-<tr>
-<td><b>🔍Lens</b>
-</td>
-<td><small>🔍Magnifying  Glass</small>
-</td>
-<td><small>🔬Microscope</small>
-</td>
-<td><small>🔭Telescope</small>
-</td>
-<td><small>🔭Telescope</small>
-</td>
-<td><small>📷Camera</small>
-</td>
-<td><small>📷Camera</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪞Mirror</small>
-</td>
-<td><small>🔭Telescope</small>
-</td></tr>
-<tr>
-<td><b>🔍Magnifying  Glass</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🦴Fossil</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🔭Telescope</small>
-</td></tr>
-<tr>
-<td><b>🏺Vase</b>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌸Flower</small>
-</td>
-<td><small>🥘Pot</small>
-</td>
-<td><small>🌬️Fan</small>
-</td>
-<td><small>💡Lava  Lamp</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🧞‍♂Genie</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🥘Pot</b>
-</td>
-<td><small>🍳Cook</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍵Teapot</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌿Bong</small>
-</td>
-<td><small>🍵Kettle</small>
-</td></tr>
-<tr>
-<td><b>🍳Cook</b>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td>
-<td><small>👨‍🍳Chef</small>
-</td></tr>
-<tr>
-<td><b>👨‍🍳Chef</b>
-</td>
-<td><small>🍳Cook</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🍳Cook</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🍮Lava Cake</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🍖Barbecue</small>
-</td>
-<td><small>🍳Cook</small>
-</td></tr>
-<tr>
-<td><b>🐸Pond</b>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌊Lake</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Geyser</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>💦Puddle</small>
-</td></tr>
-<tr>
-<td><b>🍷Wine</b>
-</td>
-<td><small>🍷Alcohol</small>
-</td>
-<td><small>💦Holy Water</small>
-</td>
-<td><small>🍇Vineyard</small>
-</td>
-<td><small>🎈Balloon</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍲Stew</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚬Smoker</small>
-</td>
-<td><small>⛽Fuel</small>
-</td></tr>
-<tr>
-<td><b>🍷Alcohol</b>
-</td>
-<td><small>🔥Burn</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍇Vineyard</small>
-</td>
-<td><small>🍷Hangover</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam  Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>⛽Fuel</small>
-</td></tr>
-<tr>
-<td><b>🔥Burn</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚗Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🔥Fire</small>
-</td></tr>
-<tr>
-<td><b>🔬Microscope</b>
-</td>
-<td><small>🦠Virus</small>
-</td>
-<td><small>🔬Amoeba</small>
-</td>
-<td><small>🦠Bacteria</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam  Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🔭Telescope</small>
-</td></tr>
-<tr>
-<td><b>🦠Virus</b>
-</td>
-<td><small>🤒Flu</small>
-</td>
-<td><small>🤒Sick</small>
-</td>
-<td><small>🌱Life</small>
-</td>
-<td><small>🤒Flu</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🧟Zombie</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🤧Cough</small>
-</td>
-<td><small>👾Hacker</small>
-</td></tr>
-<tr>
-<td><b>🤒Flu</b>
-</td>
-<td><small>🤒Fever</small>
-</td>
-<td><small>💦Fluoride</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🤧Sneeze</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🤒Sick</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🤧Cough</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🤒Fever</b>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Earthquake</small>
-</td>
-<td><small>🌀Hurricane</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>👿Hell</b>
-</td>
-<td><small>😈Devil</small>
-</td>
-<td><small>♨️Hot Spring</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>😈Devil</small>
-</td>
-<td><small>😈Satan</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>👷Engineer</small>
-</td></tr>
-<tr>
-<td><b>😈Devil</b>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>🚂Train</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>👿Hell</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🌸Flower</b>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🌸Lily</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌼Dandelion</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>👃Perfume</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🕯️Incense</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>💦Holy Water</b>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>👼Angel</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>👼Angel</small>
-</td>
-<td><small>🧛Vampire</small>
-</td></tr>
-<tr>
-<td><b>🧛Vampire</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>🩸Blood</small>
-</td>
-<td><small>🧛Dracula</small>
-</td>
-<td><small>🦇Bat</small>
-</td>
-<td><small>🧛Dracula</small>
-</td>
-<td><small>🧛Dracula</small>
-</td>
-<td><small>🦇Bat</small>
-</td>
-<td><small>🧛Dracula</small>
-</td>
-<td><small>🧛Vampire</small>
-</td></tr>
-<tr>
-<td><b>🔬Amoeba</b>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>🐸Pond</small>
-</td>
-<td><small>🌱Life</small>
-</td>
-<td><small>🦠Paramecium</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🤒Sick</b>
-</td>
-<td><small>🤒Fever</small>
-</td>
-<td><small>💊Medicine</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🌀Hurricane</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🤒Fever</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚬Cigarette</small>
-</td>
-<td><small>🔧Mechanic</small>
-</td></tr>
-<tr>
-<td><b>💦Fluoride</b>
-</td>
-<td><small>🦷Toothpaste</small>
-</td>
-<td><small>🦷Toothpaste</small>
-</td>
-<td><small>🔲Fluoride</small>
-</td>
-<td><small>💦Fluoride</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🦷Toothpaste</small>
-</td>
-<td><small>🔲Fluoride</small>
-</td>
-<td><small>🦷Toothpaste</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td></tr>
-<tr>
-<td><b>🦷Toothpaste</b>
-</td>
-<td><small>🔥Fire  Breath</small>
-</td>
-<td><small>🦷Mouthwash</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🌀Hurricane</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>�Dentist</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🦷Toothbrush</small>
-</td></tr>
-<tr>
-<td><b>♨️Hot Spring</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Geyser</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🚂Steam  Engine</small>
-</td></tr>
-<tr>
-<td><b>🌸Lily</b>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>🐸Pond</small>
-</td>
-<td><small>🌸Flower</small>
-</td>
-<td><small>🌸Flower</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌸Flower</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🕯️Incense</small>
-</td>
-<td><small>🛳️Steamboat</small>
-</td></tr>
-<tr>
-<td><b>🩸Blood</b>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td></tr>
-<tr>
-<td><b>💊Medicine</b>
-</td>
-<td><small>💊Cure</small>
-</td>
-<td><small>🧪Potion</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🤧Sneeze</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🛳️Steamboat</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚬Cigarette</small>
-</td>
-<td><small>💉Vaccine</small>
-</td></tr>
-<tr>
-<td><b>💊Cure</b>
-</td>
-<td><small>🚒Firefighter</small>
-</td>
-<td><small>💊Medicine</small>
-</td>
-<td><small>💊Medicine</small>
-</td>
-<td><small>💨Breeze</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🚒Firefighter</b>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚗Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚒Fire Engine</small>
-</td></tr>
-<tr>
-<td><b>🦷Mouthwash</b>
-</td>
-<td><small>🔥Fire Breath</small>
-</td>
-<td><small>🦷Mouthwash</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🧪Potion</b>
-</td>
-<td><small>🍵Elixir</small>
-</td>
-<td><small>🍵Elixir</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌋Magma</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🍵Elixir</b>
-</td>
-<td><small>🧪Alchemy</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Vapor</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🧪Alchemy</b>
-</td>
-<td><small>💥Explosion</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🌱Soil</small>
-</td>
-<td><small>💨Air</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>💥Explosion</b>
-</td>
-<td><small>🎆Fireworks</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Steam Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🎆Fireworks</b>
-</td>
-<td><small>💥Explosion</small>
-</td>
-<td><small>💦Splash</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💥Explosion</small>
-</td>
-<td><small>🚀Rocket</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>💦Splash</b>
-</td>
-<td><small>🎆Fireworks</small>
-</td>
-<td><small>🌊Wave</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚗Car</small>
-</td></tr>
-<tr>
-<td><b>🚜Tractor</b>
-</td>
-<td><small>🚜Tractor</small>
-</td>
-<td><small>🚤Boat</small>
-</td>
-<td><small>🐄Farm</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🚂Train</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small><i><b>N/A</b></i></small>
-</td>
-<td><small>🛢️Tank</small>
-</td></tr>
-<tr>
-<td><b>🚤Boat</b>
-</td>
-<td><small>🚢Ship</small>
-</td>
-<td><small>🚢Ship</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>⛵️Sail</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🛳️Steamboat</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏴‍☠️Pirate</small>
-</td>
-<td><small>🚢Ship</small>
-</td></tr>
-<tr>
-<td><b>🚢Ship</b>
-</td>
-<td><small>🔫Cannon</small>
-</td>
-<td><small>🚤Boat</small>
-</td>
-<td><small>🏝️Island</small>
-</td>
-<td><small>⛵️Sail</small>
-</td>
-<td><small>🌊Atlantis</small>
-</td>
-<td><small>🚢Steamship</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏴‍☠️Pirate</small>
-</td>
-<td><small>🚢Steamship</small>
-</td></tr>
-<tr>
-<td><b>🔫Cannon</b>
-</td>
-<td><small>💦Cannonball</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🛳️Steamboat</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💣Gunpowder</small>
-</td>
-<td><small>🛢️Tank</small>
-</td></tr>
-<tr>
-<td><b>💦Cannonball</b>
-</td>
-<td><small>🔫Cannon</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>💫Meteor</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🚂Steam  Engine</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🎆Firework</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>🌳Tree</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>🌊River</small>
-</td>
-<td><small>🌲Forest</small>
-</td>
-<td><small>🍃Leaf</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🌲Wood</small>
-</td></tr>
-<tr>
-<td><b>🌊River</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Lake</small>
-</td>
-<td><small>⬇️Delta</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Geyser</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🚢Ship</small>
-</td></tr>
-<tr>
-<td><b>🏖️Sand</b>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🏖️Beach</small>
-</td>
-<td><small>🏜️Desert</small>
-</td>
-<td><small>🌵Dune</small>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🥃Glass</small>
-</td>
-<td><small>🏜️Desert</small>
-</td>
-<td><small>🏖️Sandbox</small>
-</td></tr>
-<tr>
-<td><b>🏖️Beach</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🌺Hawaii</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌺Hawaii</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚢Ship</small>
-</td></tr>
-<tr>
-<td><b>🪐Planet</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Ocean</small>
-</td>
-<td><small>🌙Moon</small>
-</td>
-<td><small>⛈️Storm</small>
-</td>
-<td><small>🌍Earth</small>
-</td>
-<td><small>🕯️Steampunk</small>
-</td>
-<td><small>🌍Earth</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🪐Saturn</small>
-</td></tr>
-<tr>
-<td><b>🌫️Mist</b>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🪨Stone</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>💨Steam</small>
-</td></tr>
-<tr>
-<td><b>🏝️Island</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚢Ship</small>
-</td>
-<td><small>🌎Continent</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌺Hawaii</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🚂Train</small>
-</td></tr>
-<tr>
-<td><b>❄️Snow</b>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>❄️Ice</small>
-</td>
-<td><small>☃️Snowman</small>
-</td>
-<td><small>❄️Blizzard</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>☁️Cloud</small>
-</td>
-<td><small>🔪Obsidian</small>
-</td>
-<td><small>🌫️Fog</small>
-</td>
-<td><small>🏂Snowmobile</small>
-</td></tr>
-<tr>
-<td><b>🍚Rice</b>
-</td>
-<td><small>🕯️Incense</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍀Paddy</small>
-</td>
-<td><small>🌬Fan</small>
-</td>
-<td><small>🍕Pizza</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🍣Sushi</small>
-</td>
-<td><small>🕯️Incense</small>
-</td>
-<td><small>🍚Rice Cooker</small>
-</td></tr>
-<tr>
-<td><b>🐠Aquarium</b>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🚤Submarine</small>
-</td></tr>
-<tr>
-<td><b>🌎Titan</b>
-</td>
-<td><small>🌍Atlas</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌍Atlas</small>
-</td>
-<td><small>⚡️Zeus</small>
-</td>
-<td><small>🚢Titanic</small>
-</td>
-<td><small>🚢Titanic</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌍Atlas</small>
-</td>
-<td><small>🚢Titanic</small>
-</td></tr>
-<tr>
-<td><b>🚢Titanic</b>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌊Atlantis</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌊Atlantis</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td>
-<td><small>🌊Iceberg</small>
-</td></tr>
-<tr>
-<td><b>🌶️Pepper</b>
-</td>
-<td><small>🌶️Spice</small>
-</td>
-<td><small>🍲Soup</small>
-</td>
-<td><small>🌶️Spice</small>
-</td>
-<td><small>🤧Sneeze</small>
-</td>
-<td><small>🍕Pepperoni</small>
-</td>
-<td><small>🥩Pepper Steak</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌶️Spice</small>
-</td>
-<td><small>🌶️Chili</small>
-</td></tr>
-<tr>
-<td><b>🍵Teapot</b>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Kettle</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🚂Steam Engine</small>
-</td></tr>
-<tr>
-<td><b>🏺Clay</b>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Ceramic</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏺Pottery</small>
-</td>
-<td><small>🏺Pottery</small>
-</td></tr>
-<tr>
-<td><b>🌱Soil</b>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🌱Plant</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🪨Rock</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🚜Tractor</small>
-</td></tr>
-<tr>
-<td><b>🏠House</b>
-</td>
-<td><small>🏠Chimney</small>
-</td>
-<td><small>🚢Ship</small>
-</td>
-<td><small>🐄Farm</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🧖‍♀Sauna</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🏠Chimney</small>
-</td>
-<td><small>🚗Garage</small>
-</td></tr>
-<tr>
-<td><b>🍾Bottle</b>
-</td>
-<td><small>🧞‍♂Genie</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🛳️Steamboat</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🧞‍♂Genie</small>
-</td>
-<td><small>🚀Rocket</small>
-</td></tr>
-<tr>
-<td><b>🔭Telescope</b>
-</td>
-<td><small>🔭Astronomer</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🌙Moon</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🌌Space</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔭Astronomer</small>
-</td>
-<td><small>🌌Hubble</small>
-</td></tr>
-<tr>
-<td><b>🦴Fossil</b>
-</td>
-<td><small>🦖Dinosaur</small>
-</td>
-<td><small>🛢️Oil</small>
-</td>
-<td><small>🛢️Oil</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🦖Dinosaur</small>
-</td>
-<td><small>🦖Dinosaur</small>
-</td>
-<td><small>🦖Dinosaur</small>
-</td>
-<td><small>🦖Dinosaur</small>
-</td>
-<td><small>🦖Dinosaur</small>
-</td></tr>
-<tr>
-<td><b>🍇Vineyard</b>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🍷Wine</small>
-</td></tr>
-<tr>
-<td><b>🦠Bacteria</b>
-</td>
-<td><small>🧀Cheeze</small>
-</td>
-<td><small>🤒Sick</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌱Life</small>
-</td>
-<td><small>🌱Life</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🧀Cheeze</small>
-</td>
-<td><small>🤖Robot</small>
-</td></tr>
-<tr>
-<td><b>🌱Life</b>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>👨Human</small>
-</td>
-<td><small>💨Breeze</small>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>⚡️Energy</small>
-</td>
-<td><small>🔥Phoenix</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🤖Robot</small>
-</td></tr>
-<tr>
-<td><b>💩Dirt</b>
-</td>
-<td><small>🧱Brick</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🌱Soil</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>💩Mud</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🚜Tractor</small>
-</td></tr>
-<tr>
-<td><b>🌋Earthquake</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🏔️Mountain</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Tremor</small>
-</td></tr>
-<tr>
-<td><b>🧛Dracula</b>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🩸Blood</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🦇Bat</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td><small>🧛Vampire</small>
-</td>
-<td>🚂<small>Train</small>
-</td></tr>
-<tr>
-<td><b>🔲Fluorite</b>
-</td>
-<td><small>⚛️Fluorine</small>
-</td>
-<td><small>⚛️Fluorine</small>
-</td>
-<td><small>🔲Fluorite</small>
-</td>
-<td><small>🪁Kite</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🐄Farm</b>
-</td>
-<td><small>🍖Barbecue</small>
-</td>
-<td><small>🍚Rice</small>
-</td>
-<td><small>🌾Field</small>
-</td>
-<td><small>🌬Windmill</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>💫Meteor</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>💫Meteorite</small>
-</td>
-<td><small>🌙Moon</small>
-</td>
-<td><small>🌌Comet</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🌲Forest</b>
-</td>
-<td><small>💨Smoke</small>
-</td>
-<td><small>🐊Swamp</small>
-</td>
-<td><small>🌳Tree</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td>🚂<small>Train</small>
-</td></tr>
-<tr>
-<td><b>⬇️Delta</b>
-</td>
-<td><small>🗿Pyramid</small>
-</td>
-<td><small>🌊River</small>
-</td>
-<td><small>🌊River</small>
-</td>
-<td><small>🌊River</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🏜️Desert</b>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🏜️Oasis</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🌪️Sandstorm</small>
-</td>
-<td><small>🌵Cactus</small>
-</td>
-<td><small>🏖️Sand</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌵Mirage</small>
-</td>
-<td>🚂<small>Train</small>
-</td></tr>
-<tr>
-<td><b>🌪️Tornado</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🌫️Dust</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Eruption</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td></tr>
-<tr>
-<td><b>🌋Eruption</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🌋Geyser</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌋Volcano</small>
-</td></tr>
-<tr>
-<td><b>🌬Windmill</b>
-</td>
-<td><small>⚡️Energy</small>
-</td>
-<td><small>⚡️Energy</small>
-</td>
-<td><small>⚡️Electricity</small>
-</td>
-<td><small>⚡️Electricity</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>⛈️Storm</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌧️Rain</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🌼Dandelion</b>
-</td>
-<td><small>🌋Ash</small>
-</td>
-<td><small>🍷Wine</small>
-</td>
-<td><small>🌸Flower</small>
-</td>
-<td><small>🌱Seed</small>
-</td>
-<td><small>🎆Fireworks</small>
-</td>
-<td><small>🍵Tea</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>🚁Helicopter</small>
-</td></tr>
-<tr>
-<td><b>🌻Sunflower</b>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>☀️Sun</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>💨Smoke Signal</small>
-</td>
-<td><small>🛢️Oil</small>
-</td></tr>
-<tr>
-<td><b>🌀Hurricane</b>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌊Tsunami</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🐟Flying Fish</b>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐟Fish</small>
-</td>
-<td><small>🐦Bird</small>
-</td>
-<td><small>✈️Airplane</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>✈️Jet</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>🐉Dragon</small>
-</td>
-<td><small>✈️Jet</small>
-</td></tr>
-<tr>
-<td><b>🔥Fire Storm</b>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💨Steam</small>
-</td>
-<td><small>🌋Volcano</small>
-</td>
-<td><small>🌪️Tornado</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🪁Kite</b>
-</td>
-<td><small>🎆Fireworks</small>
-</td>
-<td><small>🌬Wind</small>
-</td>
-<td><small>💩Dirt</small>
-</td>
-<td><small>✈️Flying</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td><b>🤖Roblox</b>
-</td>
-<td><small>🏰Fortnite</small>
-</td>
-<td><small>💻Program</small>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td></tr>
-<tr>
-<td>🏰<b>Minecraft</b>
-</td>
-<td><small>💣TNT</small>
-</td>
-<td><small>💣TNT</small>
-</td>
-<td><small>🕳️Cave</small>
-</td>
-<td><small>🛤️Minecart</small>
-</td>
-<td><small>🌋Lava</small>
-</td>
-<td><small>🏰Minecraft</small>
-</td>
-<td><small>💣Creeper</small>
-</td>
-<td><small>🔥Fire</small>
-</td>
-<td><small>💣TNT</small>
-</td></tr></tbody><tfoot></tfoot></table>
-
-           </div>
-    </section>
-    
-    <section class="section">
-        <div class="container">
-            <div class="infinite-craft-text">
-                
-            <h2 class="h2--center">What is Infinite Craft?</h2>
-            <p class="h2--center">
-               Infinite Craft is a 2024 browser-based video game. In this game, players combine blocks of text to unlock an entire universe from scratch, and all results are controlled by artificial intelligence. The game is like peering into the brain of an AI, a role-playing game about what life would look like if it were governed by a large language model.
-            <br>
-               Playing is very simple: click and drag an item from right to left to place it there. Then click and drag another element on top of the one already placed to combine them.
-            <br>
-               Every time you create something new, it is added to your collection of items on the right, so you can reuse it even if you create something else from it. As you continue to mix ingredients, your collection will grow and you will be able to create more and more unique combinations.
-            <br>
-               It was first released by developer Neal Fun in January 2024 and became very popular among bloggers who created incredible things in Infinite Craft.  
-            </p>
-            <img src="/assets/img/infinite-craft-game.png" alt="Infinite Craft">
-        
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--rate">
-    <div class="container">
-        <div class="rate">
-            <div class="rate__title">Rate Infinite Craft:</div>
-            <div class="rate__stars">
-                <fieldset class="starability-basic" data-section="en">
-                    <input class="input-no-rate" id="no-rate" type="radio" name="rating" value="0" checked="" aria-label="No rating" autocomplete="off"  checked  >
-                    <input id="first-rate1" type="radio" name="rating" value="1" autocomplete="off"  >
-                    <label class="hint" for="first-rate1" title="Awful"><span class="hint__hidden">Awful</span></label>
-                    <input id="first-rate2" type="radio" name="rating" value="2" autocomplete="off"  >
-                    <label class="hint" for="first-rate2" title="Poor"><span class="hint__hidden">Poor</span></label>
-                    <input id="first-rate3" type="radio" name="rating" value="3" autocomplete="off"  >
-                    <label class="hint" for="first-rate3" title="Average"><span class="hint__hidden">Average</span></label>
-                    <input id="first-rate4" type="radio" name="rating" value="4" autocomplete="off"  >
-                    <label class="hint" for="first-rate4" title="Good"><span class="hint__hidden">Good</span></label>
-                    <input id="first-rate5" type="radio" name="rating" value="5" autocomplete="off"  >
-                    <label class="hint" for="first-rate5" title="Excellent"><span class="hint__hidden">Excellent</span></label>
-                </fieldset>
-            </div>
-            <div class="rate__numbers"><b>4.9</b> / 5</div>
-            <div class="rate__votes"><span>10,202</span> votes</div>
-        </div>  
-    </div>
-</section>
-
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__top">
-                <a class="footer__logo" href="/">
-                    <img src="/assets/img/logo.svg?v1.65" alt="Infinite Craft Game - Play Online">
-                </a>
-            </div>
-            <div class="footer__bottom">
-                <div class="footer__copir">Infinite-Craft.com © 2024 All rights reserved.</div>
-                <ul class="footer__links">
-                    <li><a href="mailto:hello@infinite-craft.com?subject=Infinite Craft">Feedback</a></li>
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-</div>
-
-<script src="https://infinite-craft.com/node_modules/smartbanner.js/dist/smartbanner.min.js?v1.65"></script>
-<script src="https://infinite-craft.com/assets/js/main.min.js?v1.65"></script>
-
-</body>
+        <script defer src="/_nuxt/static/1726786135/infinite-craft/state.js"></script>
+        <script src="/_nuxt/337f782.js" defer></script>
+        <script src="/_nuxt/2109e7b.js" defer></script>
+        <script src="/_nuxt/3573ce7.js" defer></script>
+        <script src="/_nuxt/6bd6cb3.js" defer></script>
+        <script src="/_nuxt/7ca8a56.js" defer></script>
+        <script src="/_nuxt/57a5676.js" defer></script>
+        <script>
+            (function() {
+                function c() {
+                    var b = a.contentDocument || a.contentWindow.document;
+                    if (b) {
+                        var d = b.createElement('script');
+                        d.innerHTML = "window.__CF$cv$params={r:'8d43a2364f0f391c',t:'MTcyOTIwMzE4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                        b.getElementsByTagName('head')[0].appendChild(d)
+                    }
+                }
+                if (document.body) {
+                    var a = document.createElement('iframe');
+                    a.height = 1;
+                    a.width = 1;
+                    a.style.position = 'absolute';
+                    a.style.top = 0;
+                    a.style.left = 0;
+                    a.style.border = 'none';
+                    a.style.visibility = 'hidden';
+                    document.body.appendChild(a);
+                    if ('loading' !== document.readyState)
+                        c();
+                    else if (window.addEventListener)
+                        document.addEventListener('DOMContentLoaded', c);
+                    else {
+                        var e = document.onreadystatechange || function() {}
+                        ;
+                        document.onreadystatechange = function(b) {
+                            e(b);
+                            'loading' !== document.readyState && (document.onreadystatechange = e,
+                            c())
+                        }
+                    }
+                }
+            }
+            )();
+        </script>
+    </body>
 </html>
